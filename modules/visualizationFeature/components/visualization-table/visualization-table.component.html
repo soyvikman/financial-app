@@ -1,0 +1,41 @@
+<div class="table-component">
+  <div class="table-wrap">
+    <div class="table-and-input">
+      <input type="text" placeholder="Search..." />
+      <div class="table-container">
+        <table class="table-inside">
+          <thead>
+            <tr>
+              <th>Logo</th>
+              <th>Nombre del Producto</th>
+              <th>Descripción</th>
+              <th>Fecha de liberación</th>
+              <th>Fecha de reestructuración</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of data">
+              <td>
+                <img class="logo-image" src="{{ item.logo }}" alt="Logo" />
+              </td>
+              <td>{{ item.name }}</td>
+              <td>{{ item.description }}</td>
+              <td>{{ item.date_release }}</td>
+              <td>{{ item.date_revision }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="table-footer">
+          <div class="results">Results: 5</div>
+          <div class="pagination">
+            <select>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

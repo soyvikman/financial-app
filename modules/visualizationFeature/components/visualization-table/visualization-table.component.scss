@@ -1,0 +1,82 @@
+.table-component {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5%;
+  .table-wrap {
+    input {
+      border-radius: 10px;
+      background-color: white;
+      padding: 14px;
+      border-color: 1px solid black;
+      border-style: solid;
+    }
+    input::placeholder {
+      color: black;
+      opacity: 1;
+    }
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    .table-and-input {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 2%;
+      .table-container {
+        margin-top: 20px;
+        width: 100%;
+        background-color: white;
+        table {
+          font-size: 18px;
+          padding-top: 20px;
+          width: 98%;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+          .logo-image {
+            width: 50px;
+            height: 50px;
+          }
+          thead {
+            background-color: #f7f9fb;
+            th {
+              padding: 30px;
+            }
+          }
+
+          td {
+            background-color: white;
+            border-bottom: 1px solid lightgrey;
+            padding: 2px;
+          }
+        }
+      }
+    }
+    .table-footer {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 20px;
+      width: 98%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 10px;
+      .results {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .pagination {
+        select {
+          padding-left: 30px;
+          padding-right: 30px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          background-color: white;
+          border-color: 1px solid black;
+          border-style: solid;
+        }
+      }
+    }
+  }
+}
