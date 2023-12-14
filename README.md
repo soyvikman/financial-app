@@ -1,27 +1,43 @@
-# FinancialApp
+# Devsu Code Challenge
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+## Overview
+Hey there! 👋 This is Victor Castro's submission for the Devsu code challenge. In this repository, you'll find all the functionality you asked for, following the Angular structure and best practices outlined in the awesome article [Angular Code Structuring and Best Practices](https://dev.to/codecraftjs/angular-code-structuring-and-best-practices-nkd).
 
-## Development server
+## Structure
+I've organized the code using a pattern by feature for large and scalable apps, making sure it's modular and easy to maintain.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Features Implemented
+- [Feature 1: Visualization]
+- [Feature 2: Just an example]
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Functionality
+I'm happy to report that all the required functionality is in place and ready to roll.
 
-## Build
+## Testing
+I'm currently working on a project that needs to go into production, and unfortunately, I wasn't able to complete the testing part. I regret that.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation and Execution
+To get this project up and running, just follow these steps:
 
-## Running unit tests
+1. Clone the repository:
+   ```bash
+   git clone [repository_url]
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Navigate to the project directory:
 
-## Running end-to-end tests
+cd project-directory
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Install dependencies:
 
-## Further help
+npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4. Start the Angular development server:
+
+ng serve
+
+## Additional Notes
+Make sure you've got Node.js and Angular CLI installed on your machine.
+If you have any questions or run into issues, hit me up! I'm here to help.
+🚀 Happy coding! 🚀
+

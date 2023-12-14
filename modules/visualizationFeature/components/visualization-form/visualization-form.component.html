@@ -1,0 +1,216 @@
+<app-header></app-header>
+
+<div class="main-container">
+  <div class="center-container">
+    <div class="form-container">
+      <form [formGroup]="addForm" (ngSubmit)="onSubmitForm()">
+        <h1>Formulario de Registro</h1>
+        <hr />
+        <div class="double-input-container">
+          <div class="input-container">
+            <label for="id">ID:</label>
+            <input
+              type="text"
+              formControlName="id"
+              name="id"
+              [ngClass]="{
+                'input-error':
+                  addForm.controls['id'].invalid &&
+                  (addForm.controls['id'].dirty ||
+                    addForm.controls['id'].touched)
+              }"
+            />
+            <div
+              *ngIf="
+                addForm.controls['id'].invalid &&
+                (addForm.controls['id'].dirty || addForm.controls['id'].touched)
+              "
+              class="alert error-message"
+            >
+              <div *ngIf="addForm.controls['id'].errors?.['required']">
+                Id es requerido
+              </div>
+              <div *ngIf="addForm.controls['id'].errors?.['minlength']">
+                Mínimo 3 caracteres
+              </div>
+              <div *ngIf="addForm.controls['id'].errors?.['maxlength']">
+                Máximo 10 caracteres
+              </div>
+              <div *ngIf="addForm.controls['id'].errors?.['idExists']">
+                Ese id ya existe, elegir otro.
+              </div>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label for="nombre">Nombre:</label>
+            <input
+              type="text"
+              formControlName="name"
+              name="nombre"
+              [ngClass]="{
+                'input-error':
+                  addForm.controls['name'].invalid &&
+                  (addForm.controls['name'].dirty ||
+                    addForm.controls['name'].touched)
+              }"
+            />
+            <div
+              *ngIf="
+                addForm.controls['name'].invalid &&
+                (addForm.controls['name'].dirty ||
+                  addForm.controls['name'].touched)
+              "
+              class="alert error-message"
+            >
+              <div *ngIf="addForm.controls['name'].errors">
+                Nombre es requerido
+              </div>
+              <div *ngIf="addForm.controls['name'].errors?.['minlength']">
+                Mínimo 5 caracteres
+              </div>
+              <div *ngIf="addForm.controls['name'].errors?.['maxlength']">
+                Máximo 100 caracteres
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="double-input-container">
+          <div class="input-container">
+            <label for="description">Description:</label>
+            <input
+              type="text"
+              formControlName="description"
+              name="description"
+              [ngClass]="{
+                'input-error':
+                  addForm.controls['description'].invalid &&
+                  (addForm.controls['description'].dirty ||
+                    addForm.controls['description'].touched)
+              }"
+            />
+            <div
+              *ngIf="
+                addForm.controls['description'].invalid &&
+                (addForm.controls['description'].dirty ||
+                  addForm.controls['description'].touched)
+              "
+              class="alert error-message"
+            >
+              <div *ngIf="addForm.controls['description'].errors">
+                Descripción es requerida
+              </div>
+              <div *ngIf="addForm.controls['name'].errors?.['minlength']">
+                Mínimo 10 caracteres
+              </div>
+              <div *ngIf="addForm.controls['name'].errors?.['maxlength']">
+                Máximo 200 caracteres
+              </div>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label for="logo">Logo:</label>
+            <input
+              type="text"
+              formControlName="logo"
+              name="logo"
+              [ngClass]="{
+                'input-error':
+                  addForm.controls['logo'].invalid &&
+                  (addForm.controls['logo'].dirty ||
+                    addForm.controls['logo'].touched)
+              }"
+            />
+            <div
+              *ngIf="
+                addForm.controls['logo'].invalid &&
+                (addForm.controls['logo'].dirty ||
+                  addForm.controls['logo'].touched)
+              "
+              class="alert error-message"
+            >
+              <div *ngIf="addForm.controls['logo'].errors">
+                Logo es requerido
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="double-input-container">
+          <div class="input-container">
+            <label for="date_release">Fecha Liberación:</label>
+            <input
+              type="date"
+              formControlName="date_release"
+              name="date_release"
+              [ngClass]="{
+                'input-error':
+                  addForm.controls['date_release'].invalid &&
+                  (addForm.controls['date_release'].dirty ||
+                    addForm.controls['date_release'].touched)
+              }"
+            />
+            <div
+              *ngIf="
+                addForm.controls['date_release'].invalid &&
+                (addForm.controls['date_release'].dirty ||
+                  addForm.controls['date_release'].touched)
+              "
+              class="alert error-message"
+            >
+              <div *ngIf="addForm.controls['date_release'].errors">
+                Fecha de liberación es requerido
+              </div>
+              <div
+                *ngIf="addForm.controls['date_release'].errors?.['invalidDate']"
+              >
+                Fecha debe ser mayor o igual a hoy
+              </div>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label for="date_revision">Fecha Revisión:</label>
+            <input
+              type="date"
+              formControlName="date_revision"
+              name="date_revision"
+              [ngClass]="{
+                'input-error':
+                  addForm.controls['date_revision'].invalid &&
+                  (addForm.controls['date_revision'].dirty ||
+                    addForm.controls['date_revision'].touched)
+              }"
+            />
+            <div
+              *ngIf="
+                addForm.controls['date_revision'].invalid &&
+                (addForm.controls['date_revision'].dirty ||
+                  addForm.controls['date_revision'].touched)
+              "
+              class="alert error-message"
+            >
+              <div *ngIf="addForm.controls['date_revision'].errors">
+                Fecha de revisión es requerido
+              </div>
+              <div
+                *ngIf="addForm.controls['date_revision'].errors?.['invalidDate']"
+              >
+                Fecha debe ser mayor a un año a la fecha de liberación
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="button-container">
+          <button class="reset">Reiniciar</button>
+          <button type="submit" [disabled]="!addForm.valid" class="send">
+            Enviar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,11 @@
 <div class="table-component">
   <div class="table-wrap">
     <div class="table-and-input">
-      <input type="text" placeholder="Search..." />
+      <div class="button-input">
+        <input type="text" placeholder="Search..." />
+        <button (click)="addProduct()">Agregar</button>
+      </div>
+
       <div class="table-container">
         <table class="table-inside">
           <thead>
@@ -11,6 +15,7 @@
               <th>Descripción</th>
               <th>Fecha de liberación</th>
               <th>Fecha de reestructuración</th>
+              <th>Opciones</th>
             </tr>
           </thead>
           <tbody>
@@ -20,13 +25,79 @@
               </td>
               <td>{{ item.name }}</td>
               <td>{{ item.description }}</td>
-              <td>{{ item.date_release }}</td>
-              <td>{{ item.date_revision }}</td>
+              <td>{{ item.date_release | date : "shortDate" }}</td>
+              <td>{{ item.date_revision | date : "shortDate" }}</td>
+              <td>
+                <div class="button-container">
+                  <p (click)="clickKebab(item.id)" class="icon">
+                    <svg
+                      width="800px"
+                      height="800px"
+                      viewBox="0 0 24 24"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                    >
+                      <title>Opciones</title>
+                      <g
+                        id="Kebab-Menu"
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                      >
+                        <rect
+                          id="Container"
+                          x="0"
+                          y="0"
+                          width="24"
+                          height="24"
+                        ></rect>
+                        <path
+                          d="M12,6 C12.5522847,6 13,5.55228475 13,5 C13,4.44771525 12.5522847,4 12,4 C11.4477153,4 11,4.44771525 11,5 C11,5.55228475 11.4477153,6 12,6 Z"
+                          id="shape-03"
+                          stroke="#030819"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-dasharray="0,0"
+                        ></path>
+                        <path
+                          d="M12,13 C12.5522847,13 13,12.5522847 13,12 C13,11.4477153 12.5522847,11 12,11 C11.4477153,11 11,11.4477153 11,12 C11,12.5522847 11.4477153,13 12,13 Z"
+                          id="shape-03"
+                          stroke="#030819"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-dasharray="0,0"
+                        ></path>
+                        <path
+                          d="M12,20 C12.5522847,20 13,19.5522847 13,19 C13,18.4477153 12.5522847,18 12,18 C11.4477153,18 11,18.4477153 11,19 C11,19.5522847 11.4477153,20 12,20 Z"
+                          id="shape-03"
+                          stroke="#030819"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-dasharray="0,0"
+                        ></path>
+                      </g>
+                    </svg>
+                  </p>
+                  <div
+                    class="edit-buttons button{{ item.id }}"
+                    style="visibility: hidden"
+                  >
+                    <div>
+                      <p class="edit" (click)="editProduct(item.id)">Editar</p>
+                      <p class="delete" (click)="deleteProduct(item)">
+                        Eliminar
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
         <div class="table-footer">
-          <div class="results">Results: 5</div>
+          <div class="results">Results: {{ data.length }}</div>
           <div class="pagination">
             <select>
               <option value="5">5</option>
@@ -35,6 +106,18 @@
             </select>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal">
+  <div class="modal-container">
+    <div class="modal-inside">
+      <h2>¿Estás seguro de eliminar el producto {{ nameProduct }}?</h2>
+      <hr />
+      <div class="modal-button-container">
+        <button (click)="onCancel()">Cancelar</button>
+        <button (click)="onDelete()" class="confirm-button">Confirmar</button>
       </div>
     </div>
   </div>
